@@ -1,0 +1,17 @@
+#map {
+	height: 500px;
+	width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+	#map {
+		height: 300px;
+	}
+}
+
+#marker {
+  background-image: url('/images/logo-chilaquileon.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
