@@ -1,0 +1,42 @@
+@import '_colors'
+
+.progress
+    position: absolute
+    bottom: 0px
+    left: 7px
+    -webkit-appearance: none
+    appearance: none
+    width: 99%
+    height: 6px
+    border: none
+    background: transparent
+
+.progress::-webkit-progress-bar
+    background: transparent
+    border-radius: 15px
+
+.progress::-webkit-progress-value
+    background: linear-gradient(to left, $green, $orange, $red)
+    background-attachment: fixed
+    border-radius: 15px
+
+.progress::-moz-progress-bar
+    background: linear-gradient(to left,  $green, $orange, $red)
+    background-attachment: fixed
+    border-radius: 15px
+
+.nav
+    // background-color: $gray
+    box-shadow: 2px 2px 2px $gray
+    top: 6px
+    border-radius: 10px
+    font-size: 20px
+    font-weight: 700
+    overflow-x: clip
+
+    .navbar
+        width: 55%
+        justify-content: space-around
+
+    .logo
+        width: 100px
