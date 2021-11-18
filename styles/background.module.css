@@ -1,0 +1,28 @@
+.bg1 {
+  background: linear-gradient(
+      rgba(253, 253, 253, 0.84),
+      rgba(253, 253, 253, 0.84)
+    ),
+    url('/images/blackbackb.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg2{
+  background: linear-gradient(
+      rgba(253, 253, 253, 0.84),
+      rgba(253, 253, 253, 0.84)
+    ),
+    url('/images/salsaroja.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.index{
+  padding: 83px 0 0 0;
+}
+
+.menu{
+  padding: 100px 0 250px 0;
+  height: 1000px;
+}
