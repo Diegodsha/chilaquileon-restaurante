@@ -1,13 +1,26 @@
-html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Nunito', sans-serif;
+  /* min-height: 100vh; */
+  /* margin-top: 100px; */
+  /* background: blue;
+  max-width: 1600px; */
+  background: linear-gradient(
+      rgba(253, 253, 253, 0.84),
+      rgba(253, 253, 253, 0.84)
+    ),
+    url('/images/blackbackb.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#__next {
+  max-width: 1600px;
 }
 
 a {
-  color: inherit;
+  color: black;
   text-decoration: none;
 }
 
