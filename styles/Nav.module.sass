@@ -1,4 +1,5 @@
 @import '_colors'
+@import 'fonts'
 
 .progress
     position: absolute
@@ -21,22 +22,37 @@
     border-radius: 15px
 
 .progress::-moz-progress-bar
-    background: linear-gradient(to left,  $green, $orange, $red)
+    background: linear-gradient(to left, $green, $orange, $red)
     background-attachment: fixed
     border-radius: 15px
 
+.dropmenu
+        font-family: $font2 
+
 .nav
-    // background-color: $gray
-    box-shadow: 2px 2px 2px $gray
     top: 6px
     border-radius: 10px
+    font-family: $font1
     font-size: 20px
     font-weight: 700
+    font-style: italic
     overflow-x: clip
-
+    
     .navbar
         width: 55%
         justify-content: space-around
 
     .logo
         width: 100px
+
+.dark
+    background-color: $dark-gray
+
+.light
+    background-color: $white
+
+.shadowLight
+    box-shadow: 2px 2px 2px #A09999
+
+.shadowDark
+    box-shadow: 2px 2px 2px $dark-shadow

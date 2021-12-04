@@ -5,6 +5,10 @@ import Carousel from '../components/Carousel';
 import { setDarkTheme, setLightTheme } from '../redux/actions';
 import backStyle from '../styles/background.module.css';
 import sectionStyle from '../styles/section.module.sass';
+import Link from 'next/link';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import Sauce from '../components/Sauce';
 
 // import { motion } from 'framer-motion';
 
@@ -35,15 +39,21 @@ const stagger = {
 }; */
 
 export default function Home() {
-  const dispatch = useDispatch()
-  const theme = useSelector(state => state.theme)
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme);
 
-  const changeTheme = (e)=>{
-    const color = e.target.textContent
-    color === 'light' ? dispatch(setDarkTheme('dark')) :
-    dispatch(setLightTheme('ligth'))
-  }
-<button onClick={(e)=>changeTheme(e)}>{theme.color === 'dark' ?'dark' : 'light'}</button>
+  const changeTheme = (e) => {
+    const color = e.target.textContent;
+    // const body = document.querySelector(body)
+    // body.style ='padding: 1rem'
+    console.log(body);
+    color === 'light'
+      ? dispatch(setDarkTheme('dark'))
+      : dispatch(setLightTheme('ligth'));
+  };
+  <button onClick={(e) => changeTheme(e)}>
+    {theme.color === 'dark' ? 'dark' : 'light'}
+  </button>;
   return (
     <div className={` ${backStyle.index}  container-fluid px-2`}>
       <Head>
@@ -53,42 +63,84 @@ export default function Home() {
         <Carousel />
       </header>
       <main>
-        <section className="container-fluid article my-4">
-          <div className="row">
-            <div className="col-12 text-center">
-              <h2 className={`my-5 display-2`}>No somos solo chilaquiles</h2>
-              
+        <section className="container-fluid intro text-center">
+          <div className="my-4">
+            <Image
+              className={``}
+              src="/images/logo-chilaquileon.png"
+              alt="chilaquileon-logo"
+              width={390}
+              height={180}
+            />
+          </div>
+          <p className={`${sectionStyle.satisfy} ${sectionStyle.titleShadow} display-6 fw-bold mb-5`}> Chilaquiles hechos con amor</p>
+          <div className="row justify-content-center my-5">
+            <div className="col-6 col-md-4">
+              <div
+                className={`dish dish1 ${sectionStyle.ts} ${
+                  theme.color === 'dark'
+                    ? sectionStyle.shadowDark
+                    : sectionStyle.shadowLight
+                }`}
+              >
+                <Image
+                  priority
+                  src="/images/chimiquil.jpg"
+                  width={550}
+                  height={450}
+                  // layout='fill'
+                  className={`${sectionStyle.notOnly}`}
+                  alt="platillo"
+                />
+              </div>
             </div>
-            <div className={`${sectionStyle.ts} col-12 col-md-6 text-center position-relative`} 
-            // style={{ height:'450px'}}
-            >
-              <Image
-              priority
-                src="/images/omelette.jpg"
-                width={550}
-                height={450}
-                // layout='fill'
-                className={`${sectionStyle.notOnly}`}
-                alt="platillo"
-              />
+            <div className="col-6 col-md-4">
+              <div
+                className={`dish dish2 ${sectionStyle.ts} ${
+                  theme.color === 'dark'
+                    ? sectionStyle.shadowDark
+                    : sectionStyle.shadowLight
+                }`}
+              >
+                <Image
+                  priority
+                  src="/images/torta.jpg"
+                  width={550}
+                  height={450}
+                  // layout='fill'
+                  className={`${sectionStyle.notOnly}`}
+                  alt="platillo"
+                />
+              </div>
             </div>
-            <div className="col-12 col-md-6 text-start d-flex align-items-center">
-              <p className={`${sectionStyle.ìnstalations} p-4`}>
-                {' '}
-                Chilaquileón, como su nombre lo dice, es un restaurante
-                mexicano, lleno de delicias y experiencias en cada bocado,
-                nuestra especialidad son los chilaquiles, suena un platillo
-                sencillo, ¿no? Pero que eso no te engañe, porque no, no son
-                “solo chilaquiles”, nuestra variedad de salsas caseras, totopos,
-                nuestras varias presentaciones de platillos y nuestra
-                preparación, te encantarán.
-              </p>
+            <div className="col-6 col-md-4 mt-3 mt-md-0">
+              <div
+                className={`dish dish3 ${sectionStyle.ts} ${
+                  theme.color === 'dark'
+                    ? sectionStyle.shadowDark
+                    : sectionStyle.shadowLight
+                }`}
+              >
+                <Image
+                  priority
+                  src="/images/sartenazo.jpg"
+                  width={550}
+                  height={450}
+                  // layout='fill'
+                  className={`${sectionStyle.notOnly}`}
+                  alt="platillo"
+                />
+              </div>
             </div>
           </div>
         </section>
         <section
           id="instalations"
-          className={`${sectionStyle.ìnstalations} container-fluid`}
+          className={`${sectionStyle.ìnstalations} ${
+            theme.color === 'dark'
+              ? sectionStyle.instalationsDark
+              : sectionStyle.instalationsLight
+          } container-fluid py-5`}
         >
           <div className="row text-center">
             <div className="col-xs-12 col-sm-6 col-md-4">
@@ -99,13 +151,13 @@ export default function Home() {
                 src="https://img.icons8.com/pastel-glyph/50/000000/dog--v4.png"
                 alt="dog-icon"
               />
-              <h3>Pet Friendly</h3>
+              <h3 className={`${sectionStyle.satisfy}`}>Pet Friendly</h3>
               <p>
                 Ven y disfruta de tu desayuno junto a tu compañero peludo, no te
                 preocupes, también puedes traer a tu pareja.
               </p>
             </div>
-            <div className="col-xs-12 col-sm-6 col-md-4">
+            <div className="col-xs-12 col-sm-6 col-md-4 my-4 my-sm-0">
               <Image
                 width={50}
                 height={50}
@@ -113,8 +165,8 @@ export default function Home() {
                 src="https://img.icons8.com/metro/50/000000/virus.png"
                 alt="virus-icon"
               />
-              <h3>Instalaciones sanitizadas</h3>
-              <p>
+              <h3 className={`${sectionStyle.satisfy}`}>Instalaciones sanitizadas</h3>
+              <p >
                 Nos preocupamos por tu bienestar, nuestro personal está
                 capacitado para brindarte las condiciones de salubridad
                 necesarias para que disfrutes tus chilaquiles sin ningúna
@@ -129,30 +181,273 @@ export default function Home() {
                 src="https://img.icons8.com/ios/64/000000/family--v1.png"
                 alt="fam-icon"
               />
-              <h3>Ambiente familiar y tranquilo</h3>
-              <p>
+              <h3 className={`${sectionStyle.satisfy}`}>Ambiente familiar y tranquilo</h3>
+              <p >
                 Los chilaquiles fueron hechos para disfrutarse y Chilaquileón es
                 el lugar indicado para saborearlos junto a tu familia y amigos.
               </p>
             </div>
           </div>
         </section>
-        <section className="container-fluid intro">
-          <h2>titulo de seccion</h2>
-          <p>logo grande arriba, chilaquiles hechos on amor</p>
-        </section>
-        <section id="about" className="about container-fluid p-0">
-          <div className="video video1">video1</div>
-          <div className="video video2">video2</div>
-          <div className="video video3">video3</div>
-          <div className="video video4">video4</div>
-        </section>
-        <section id="location" className="location container-fluid ">
+        <section className="container-fluid article my-5">
           <div className="row">
-            <div className="findUs col-12 col-md-6 d-flex align-items-center justify-content-center">
-              <h3>Encuentranos!!</h3>
+            <div className="col-12 text-center">
+              <h2 className={`${sectionStyle.titleShadow} ${sectionStyle.satisfy} my-5 display-2`}>
+                No somos solo chilaquiles
+              </h2>
             </div>
-            <div className="map col-12 col-md-6 pe-0">
+            <div
+              className={`${sectionStyle.ts} ${
+                theme.color === 'dark'
+                  ? sectionStyle.shadowDark
+                  : sectionStyle.shadowLight
+              } col-12 col-md-6 text-center position-relative`}
+              // style={{ height:'450px'}}
+            >
+              <Image
+                priority
+                src="/images/omelette.jpg"
+                width={550}
+                height={450}
+                // layout='fill'
+                className={`${sectionStyle.notOnly}`}
+                alt="platillo"
+              />
+            </div>
+            <div className="col-12 col-md-6 text-start d-flex align-items-center p-0 p-md-2">
+              <p
+                className={`${sectionStyle.ìnstalations} ${
+                  theme.color === 'dark'
+                    ? sectionStyle.instalationsDark
+                    : sectionStyle.instalationsLight
+                } p-4 mt-4 mt-0-md ${sectionStyle.nunito}`}
+              >
+                {' '}
+                Chilaquileón, como su nombre lo dice, es un restaurante
+                mexicano, lleno de delicias y experiencias en cada bocado,
+                nuestra especialidad son los chilaquiles, suena un platillo
+                sencillo, ¿no? Pero que eso no te engañe, porque no, no son
+                “solo chilaquiles”, nuestra variedad de salsas caseras, totopos,
+                nuestras varias presentaciones de platillos y nuestra
+                preparación, te encantarán.
+              </p>
+            </div>
+          </div>
+        </section>
+        <h2
+          className={`${sectionStyle.titleShadow} ${sectionStyle.satisfy} my-5 display-2 text-center`}
+        >
+          Tienes Hambre? Checa ésto
+        </h2>
+        <section
+          id="about"
+          className={`${sectionStyle.ìnstalations}  ${
+            theme.color === 'dark'
+              ? sectionStyle.instalationsDark
+              : sectionStyle.instalationsLight
+          } about container-fluid py-5 mb-5`}
+        >
+          <div className="row ">
+            {/* column with 3 videos */}
+            <div className="col-12 ">
+              <div className="row ">
+                <div className="col-12 text-center mb-4">
+                  <h3
+                    className={`${
+                      theme.color === 'dark'
+                        ? sectionStyle.dishNameDark
+                        : sectionStyle.dishNameLight
+                    } display-6 d-inline p-2 ${sectionStyle.nunito}`}
+                  >
+                    CHIMIQUIL
+                  </h3>
+                </div>
+                <div className="col-12 col-sm-6 d-flex justify-content-center video video1 mb-4 ">
+                  <div
+                    className={`${sectionStyle.circle} ${
+                      theme.color === 'dark'
+                        ? sectionStyle.shadowDark
+                        : sectionStyle.shadowLight
+                    }`}
+                  >
+                    <Image
+                      priority
+                      src="/images/chimiquil.jpg"
+                      className="img-fluid"
+                      // layout="fill"
+                      width={400}
+                      height={400}
+                      alt="..."
+                    />
+                  </div>
+                </div>
+
+                <div className="col-12 col-sm-6 d-flex justify-content-center video video1 mb-4 ">
+                  <div
+                    className={`${sectionStyle.circle} ${
+                      theme.color === 'dark'
+                        ? sectionStyle.shadowDark
+                        : sectionStyle.shadowLight
+                    }`}
+                  >
+                    <Image
+                      priority
+                      src="/images/omelette.jpg"
+                      className="img-fluid"
+                      // layout="fill"
+                      width={400}
+                      height={400}
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <div className="col-12 d-flex flex-column justify-content-center align-items-center">
+                  <p>
+                    Chilaquileón, como su nombre lo dice, es un restaurante
+                    mexicano, lleno de delicias y experiencias en cada bocado,
+                    nuestra especialidad son los chilaquiles, suena un platillo
+                    sencillo, ¿no? Pero que eso no te engañe, porque no, no son
+                  </p>
+                  <div className="d-flex align-items-center">
+                    <span className="text-secondary">Salsa recomendada:</span>
+                    <Sauce hotLevel={3} type='Chipotle'/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr className=" w-75 mx-auto my-5" />
+            <div className="col-12 mb-5">
+              <div className="row ">
+                <div className="col-12 text-center mb-4">
+                  <h3
+                    className={`${
+                      theme.color === 'dark'
+                        ? sectionStyle.dishNameDark
+                        : sectionStyle.dishNameLight
+                    } display-6 d-inline p-2`}
+                  >
+                    TORTA
+                  </h3>
+                </div>
+                <div
+                  className={`${sectionStyle.circle} ${
+                    theme.color === 'dark'
+                      ? sectionStyle.shadowDark
+                      : sectionStyle.shadowLight
+                  }  video video3 col-12 col-md-6 order-1 order-md-2 d-flex justify-content-center my-4`}
+                >
+                  <Image
+                    priority
+                    src="/images/torta.jpg"
+                    className="img-fluid"
+                    // layout="fill"
+                    width={400}
+                    height={400}
+                    alt="..."
+                  />
+                </div>
+                <div className="col-12 col-md-6 order-2 order-md-1 d-flex flex-column justify-content-center align-items-center">
+                  <p className="text-center text-md-start">
+                    Chilaquileón, como su nombre lo dice, es un restaurante
+                    mexicano, lleno de delicias y experiencias en cada bocado,
+                    nuestra especialidad son los chilaquiles, suena un platillo
+                    sencillo, ¿no? Pero que eso no te engañe, porque no, no son
+                  </p>
+                  <div className="d-flex align-items-center">
+                    <span className="text-secondary">Salsa recomendada:</span>
+                    <Sauce hotLevel={2} type='Verde'/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr className=" w-75 mx-auto my-5" />
+            <div className="col-12 mb-5">
+              <div className="row ">
+                <div className="col-12 text-center mb-4">
+                  <h3
+                    className={`${
+                      theme.color === 'dark'
+                        ? sectionStyle.dishNameDark
+                        : sectionStyle.dishNameLight
+                    } display-6 d-inline p-2`}
+                  >
+                    SARTENAZO
+                  </h3>
+                </div>
+                <div
+                  className={`${sectionStyle.circle} ${
+                    theme.color === 'dark'
+                      ? sectionStyle.shadowDark
+                      : sectionStyle.shadowLight
+                  } video video2 col-12 col-md-6 order-1 d-flex justify-content-center my-4`}
+                >
+                  <Image
+                    priority
+                    src="/images/sartenazo.jpg"
+                    className="img-fluid"
+                    // layout="fill"
+                    width={400}
+                    height={400}
+                    alt="..."
+                  />
+                </div>
+                <div className="col-12 col-md-6 order-2 d-flex flex-column justify-content-center align-items-center">
+                  <p className="text-center text-md-start">
+                    Chilaquileón, como su nombre lo dice, es un restaurante
+                    mexicano, lleno de delicias y experiencias en cada bocado,
+                    nuestra especialidad son los chilaquiles, suena un platillo
+                    sencillo, ¿no? Pero que eso no te engañe, porque no, no son{' '}
+                  </p>
+                  {/* <br /> <br /> */}
+                  <div className="d-flex align-items-center">
+                    <span className="text-secondary">Salsa recomendada:</span>
+                    <Sauce hotLevel={5} type='Habanero'/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="navegacion-menu col-12 col-md-6 d-flex justify-content-around mt-5">
+              <div className="verMenu">
+                <Link href="/menu">
+                  <a
+                    className={`${
+                      theme.color === 'dark'
+                        ? sectionStyle.menuBtnDark
+                        : sectionStyle.menuBtnLight
+                    } btn fw-bold`}
+                  >
+                    Ver Menú Completo
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div className="siguenos col-12 col-md-6 d-flex justify-content-center align-items-center mt-5  ">
+              <p className="display-6"> Siguenos :)</p>{' '}
+              <span className="mx-4">
+                <a href="https://www.facebook.com/chilaquileon/">
+                  <FacebookIcon
+                    className={`${sectionStyle.mediaIcon} ${sectionStyle.face}`}
+                  />
+                </a>
+              </span>{' '}
+              <span>
+                <a href="https://www.instagram.com/chilaquileon/?hl=en">
+                  <InstagramIcon
+                    className={`${sectionStyle.mediaIcon} ${sectionStyle.insta}`}
+                  />
+                </a>
+              </span>
+            </div>
+          </div>
+        </section>
+        <section id="location" className="location container-fluid my-5">
+          <div className="row">
+            <div className="findUs col-12 col-lg-6 d-flex align-items-center justify-content-center mb-4">
+              <h3 className={`${sectionStyle.titleShadow} display-3`}>
+                Encuentranos!!
+              </h3>
+            </div>
+            <div className="map col-12 col-lg-6 pe-0">
               <iframe
                 className="w-100"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.345903866533!2d-101.61712828574282!3d21.09877139076193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbddf952fdfb1%3A0x85d2c1d26bf57203!2sChilaquileon!5e0!3m2!1sen!2smx!4v1636490261140!5m2!1sen!2smx"

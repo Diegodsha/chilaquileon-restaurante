@@ -1,21 +1,45 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styledNav from '../styles/Nav.module.sass';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDarkTheme, setLightTheme } from '../redux/actions';
 
+// const switchTheme = document.querySelector('#changeThemeSwitch');
 const Nav = () => {
-  const dispatch = useDispatch()
-  const theme = useSelector(state => state.theme)
-
-  const changeTheme = (e)=>{
-    const color = e.target.textContent
-    color === 'light' ? dispatch(setDarkTheme('dark')) :
-    dispatch(setLightTheme('ligth'))
-  }
+  const [checked, setChecked] = useState(false);
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme);
+  // const switchTheme = useRef();
 
 
+  const changeTheme = () => {
+    setChecked(!checked)
+    localStorage.setItem('checked', JSON.stringify(!checked))
+    
+  };
+
+  // const changeT = () => {
+  //   // setChecked(!checked);
+  //   if (checked) {
+  //     dispatch(setLightTheme('ligth'));
+  //   } else {
+  //     dispatch(setDarkTheme('dark'));
+  //   }
+  // };
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem('checked') ? JSON.parse(localStorage.getItem('checked'))
+    : false
+    
+    if (localTheme) {
+      dispatch(setDarkTheme('dark'));
+      setChecked(true)
+    } else {
+      dispatch(setLightTheme('ligth'));
+      setChecked(false)
+    }
+  }, [checked, dispatch]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -42,22 +66,30 @@ const Nav = () => {
 
   return (
     <nav
-      className={`${styledNav.nav} navbar navbar-expand-md navbar-light ${theme.color === 'dark' ?'bg-dark' : 'bg-light'} fixed-top mx-2`}
+      className={`${styledNav.nav} ${
+        theme.color === 'dark' ? styledNav.shadowDark : styledNav.shadowLight
+      } navbar navbar-expand-lg ${
+        theme.color === 'dark' ? 'navbar-dark' : 'navbar-light'
+      } fixed-top mx-2} ${
+        theme.color === 'dark' ? styledNav.dark : styledNav.light
+      } fixed-top mx-2`}
     >
       <progress className={styledNav.progress} max="100" value="0"></progress>
       <div className="container-fluid">
-        <Link href="/">
+        <Link href="/#">
           <a className="ms-3">
             <Image
               className={`${styledNav.logo}`}
               src="/images/logo-chilaquileon.png"
               alt="chilaquileon-logo"
               width={80}
-              height={40}
+              height={30}
             />
           </a>
         </Link>
-        <button onClick={(e)=>changeTheme(e)}>{theme.color === 'dark' ?'dark' : 'light'}</button>
+        {/* <button onClick={(e) => changeTheme(e)}>
+          {theme.color === 'dark' ? 'dark' : 'light'}
+        </button> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -79,7 +111,7 @@ const Nav = () => {
                 Inicio
               </Link>
             </li> */}
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown me-2">
               <a
                 className="nav-link active dropdown-toggle p-0"
                 href="#"
@@ -90,7 +122,7 @@ const Nav = () => {
               >
                 Inicio
               </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul className={`${styledNav.dropmenu} dropdown-menu`} aria-labelledby="navbarDropdown">
                 <li>
                   <Link href="/">
                     <a className="dropdown-item">Ir a Inicio</a>
@@ -103,7 +135,7 @@ const Nav = () => {
                 </li>
                 <li>
                   <Link href="/#about">
-                    <a className="dropdown-item">Acerca de chilaquileón</a>
+                    <a className="dropdown-item">¿Chilaquiles?</a>
                   </Link>
                 </li>
                 <li>
@@ -122,7 +154,7 @@ const Nav = () => {
               </Link>
             </li>
             <li className="nav-item mx-md-2">
-              <Link className="nav-link" href="/musica">
+              <Link className="nav-link" href="/galeria">
                 Galería
               </Link>
             </li>
@@ -132,10 +164,23 @@ const Nav = () => {
               </Link>
             </li>
             <li className="nav-item mx-md-2">
-              <Link className="nav-link" href="/musica">
+              <Link className="nav-link" href="/nosotros">
                 Nosotros
               </Link>
             </li>
+            <div className="form-check form-switch">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="changeThemeSwitch"
+                // onClick={(e) => changeT(e)}
+                checked={checked}
+                onChange={() => changeTheme()}
+                // ref={switchTheme}
+              />
+              
+            </div>
           </ul>
         </div>
       </div>

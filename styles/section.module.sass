@@ -1,14 +1,145 @@
+@import 'colors'
+@import 'fonts'
+
 .ìnstalations
-    background: #fff
     padding: 1rem
     border-radius: 15px
+    box-shadow: 1px 4px 12px #838080
+
+.instalationsDark
+    background-color: $dark-gray
+    color: #fff
+
+.instalationsLight
+    background-color: #fff
+
+.satisfy
+    font-family: $font1
+    font-style: italic
 
 .ts
-    
+
     span
-        box-shadow: 13px 11px 16px gray
         border-radius: 10px
         border-radius: 10px
+        transform: scale(1)
+        transition: transform 200ms ease-in-out
+        &:hover
+            transform: scale(1.05)
 
 .notOnly
     border-radius: 10px
+
+.circle
+    span
+
+        border-radius: 50%
+        transform: scale(1)
+        transition: transform 200ms ease-in-out
+        &:hover
+            transform: scale(1.05)
+
+.shadowLight
+    span
+        box-shadow: 13px 11px 16px gray
+
+.shadowDark
+    span
+        box-shadow: 13px 11px 16px $dark-shadow
+
+.dishNameLight
+    border: 1px solid #000
+    border-radius: 8px
+
+.dishNameDark
+    border: 1px solid #fff
+    border-radius: 8px
+
+.mediaIcon
+    font-size: 3.5rem !important
+    // &.MuiSvgIcon-root
+
+.face
+    color: #0470E5
+
+.insta
+    color: #E85355
+
+.menuBtnLight
+    background-color: $orange
+    &:hover
+        background-color: $dark-orange
+        box-shadow: 0px 0px 10px 3px $dark-orange
+
+.menuBtnDark
+    background-color: $dark-orange
+    &:hover
+        background-color: $orange
+        box-shadow: 0px 0px 10px 3px $orange
+
+.titleShadow
+    text-shadow: 20px 27px 6px #7c7878
+
+.sauce
+    border: 2px solid $dark-orange
+    border-radius: 8px
+    padding: 5px
+
+.sauceGroup
+    left: 0
+    top: 7%
+    display: flex
+    flex-direction: row
+    width: auto
+    flex-wrap: wrap
+    padding: 20px
+    text-align: center
+    border-radius: 0 1rem 1rem 0
+    box-shadow: 11px 8px 20px $dark-shadow
+
+.sauceGroupLight
+    background: #fff
+    color: gray
+
+.sauceGroupDark
+    background: $dark-gray
+    color: #000
+
+.sauceBorderLight
+    border-top: 2px solid $dark-orange
+    border-right: 2px solid $dark-orange
+    border-bottom: 2px solid $dark-orange
+
+.sauceBorderDark
+    border-top: 2px solid $orange
+    border-right: 2px solid $orange
+    border-bottom: 2px solid $orange
+
+.separator
+    height: 250px
+
+.menuImg
+    height: 1100px
+
+.flameOn
+    color: red
+    animation: flame 3s ease-in-out infinite
+    // &.MuiSvgIcon-root
+
+@keyframes flame
+    0%
+        color: $dark-orange
+        transform: scale(1)
+
+    50%
+        color: red
+        transform: scale(1.1)
+
+    100%
+        color: $dark-orange
+        transform: scale(1)
+
+@media screen and (max-width: 355px)
+    .sauceGroup
+        padding: 9px
+

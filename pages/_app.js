@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
           name="description"
           content="Restaurante de chilaquiles en diversas presentaciones"
         />
-        <link rel="icon" href="/images/chillogo.png" />
+        <link rel="icon" href="/images/logo-chilaquileon.png" />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           rel="stylesheet"

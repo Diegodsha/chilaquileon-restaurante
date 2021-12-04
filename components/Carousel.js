@@ -1,11 +1,14 @@
 import Image from 'next/image';
+import { useSelector } from 'react-redux';
 import carouselStyle from '../styles/Carrousel.module.sass';
 
 const Carousel = () => {
+  const theme = useSelector((state) => state.theme);
+
   return (
     <div
       id="carouselDark"
-      className={`${carouselStyle.car} carousel carousel-dark slide`}
+      className={`${carouselStyle.car} carousel ${theme.color === 'dark' ? 'carousel-dark' : 'carousel-light'} slide`}
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators">
