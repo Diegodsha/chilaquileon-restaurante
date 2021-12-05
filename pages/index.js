@@ -77,7 +77,7 @@ export default function Home() {
     gsap.from('#instalations', {
       scrollTrigger: {
         trigger: '#instalations',
-        start: 'top 50%',
+        start: 'top bottom',
         toggleActions: 'restart none none none',
       },
       x: '-30%',
@@ -89,27 +89,27 @@ export default function Home() {
     gsap.from('.soloChilaquiles', {
       scrollTrigger: {
         trigger: '.soloChilaquiles',
-        start: 'bottom bottom',
-        // toggleActions: "restart none none none",
+        start: 'top bottom',
+        toggleActions: "restart none none none",
       },
-      x: '100%',
+      x: '-30%',
       opacity: 0,
       duration: 2,
       ease: Power4.easeOut,
     });
 
-    // gsap.from(".soloChilaquilesImg", {
-    //   scrollTrigger: {
-    //     trigger: ".soloChilaquilesImg",
-    //     start: "top 50%",
-    //     // toggleActions: "none none none none",
-    //   },
-    //   x: "100%",
-    //   opacity: 0,
-    //   duration: 2,
-    //   ease: Power4.easeOut,
-    //   stagger: 0.9,
-    // });
+    gsap.from(".soloChilaquilesImg", {
+      scrollTrigger: {
+        trigger: ".soloChilaquilesImg",
+        start: "top bottom",
+        toggleActions: "restart none none none",
+      },
+      y: "30%",
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+      stagger: 0.9,
+    });
   }, []);
 
   return (
@@ -284,13 +284,13 @@ export default function Home() {
                 alt="platillo"
               />
             </div>
-            <div className="col-12 col-md-6 text-start d-flex align-items-center p-0 p-md-2">
+            <div className="col-12 col-md-6 text-start d-flex align-items-center p-0 p-md-2 soloChilaquilesImg">
               <p
                 className={`${sectionStyle.ìnstalations} ${
                   theme.color === 'dark'
                     ? sectionStyle.instalationsDark
                     : sectionStyle.instalationsLight
-                } p-4 mt-4 mt-0-md  soloChilaquilesImg ${sectionStyle.nunito}`}
+                } p-4 mt-4 mt-0-md   ${sectionStyle.nunito}`}
               >
                 {' '}
                 Chilaquileón, como su nombre lo dice, es un restaurante
