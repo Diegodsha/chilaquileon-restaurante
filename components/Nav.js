@@ -33,8 +33,8 @@ const Nav = () => {
   }, [checked, dispatch]);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    var t1 = gsap.timeline();
+    // gsap.registerPlugin(ScrollTrigger);
+    // var t1 = gsap.timeline();
     // nav progress
     gsap.to('progress', {
       value: 100,
@@ -42,7 +42,7 @@ const Nav = () => {
       scrollTrigger: { scrub: 0.3 },
     });
 
-    t1.from(
+    gsap.from(
       'nav',
       {
         y: '-100%',

@@ -58,41 +58,62 @@ export default function Home() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from(".dish1", {
+
+  var t1 = gsap.timeline();
+
+    gsap.from(".dish", {
       scrollTrigger: {
         trigger: ".dish1",
-        start: "bottom bottom",
+        start: "top bottom",
         toggleActions: "restart none none none",
       },
-      x: -500,
-      opacity: 1,
-      duration: 1.2,
-      stagger: 0.3,
+      y: '-90%',
+      opacity: 0,
+      duration: 2,
+      ease:'elastic' ,
+      stagger: 0.6,
+      
     });
 
-    gsap.from(".dish2", {
+
+    gsap.from("#instalations", {
       scrollTrigger: {
-        trigger: ".dish2",
-        start: "bottom bottom",
+        trigger: "#instalations",
+        start: "top 50%",
         toggleActions: "restart none none none",
       },
-      x: -500,
-      opacity: 1,
-      duration: 1.2,
-      stagger: 1,
+      x: "-30%",
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
     });
 
-    gsap.from(".dish3", {
-      scrollTrigger: {
-        trigger: ".dish3",
-        start: "bottom bottom",
-        toggleActions: "restart none none none",
-      },
-      x: -500,
-      opacity: 1,
-      duration: 1.2,
-      stagger: 1.5,
-    });
+    gsap.from(".soloChilaquiles", {
+    //   scrollTrigger: {
+    //     trigger: ".soloChilaquiles",
+    //     start: "bottom bottom",
+    //     // toggleActions: "restart none none none",
+    //   },
+    //   x: "100%",
+    //   opacity: 0,
+    //   duration: 2,
+    //   ease: Power4.easeOut,
+    // });
+
+    // gsap.from(".soloChilaquilesImg", {
+    //   scrollTrigger: {
+    //     trigger: ".soloChilaquilesImg",
+    //     start: "top 50%",
+    //     // toggleActions: "none none none none",
+    //   },
+    //   x: "100%",
+    //   opacity: 0,
+    //   duration: 2,
+    //   ease: Power4.easeOut,
+    //   stagger: 0.9,
+    // });
+
+    
   }, [])
 
   return (
@@ -244,7 +265,7 @@ export default function Home() {
           <div className="row">
             <div className="col-12 text-center">
               <h2
-                className={`${sectionStyle.titleShadow} ${sectionStyle.satisfy} my-5 display-2`}
+                className={`${sectionStyle.titleShadow} ${sectionStyle.satisfy} my-5 display-2 soloChilaquiles`}
               >
                 No somos solo chilaquiles
               </h2>
@@ -254,7 +275,7 @@ export default function Home() {
                 theme.color === 'dark'
                   ? sectionStyle.shadowDark
                   : sectionStyle.shadowLight
-              } col-12 col-md-6 text-center position-relative`}
+              } col-12 col-md-6 text-center position-relative soloChilaquilesImg`}
               // style={{ height:'450px'}}
             >
               <Image
@@ -273,7 +294,7 @@ export default function Home() {
                   theme.color === 'dark'
                     ? sectionStyle.instalationsDark
                     : sectionStyle.instalationsLight
-                } p-4 mt-4 mt-0-md ${sectionStyle.nunito}`}
+                } p-4 mt-4 mt-0-md  soloChilaquilesImg ${sectionStyle.nunito}`}
               >
                 {' '}
                 Chilaquileón, como su nombre lo dice, es un restaurante

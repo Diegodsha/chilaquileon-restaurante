@@ -7,11 +7,11 @@ const Carousel = () => {
   const theme = useSelector((state) => state.theme);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    var t1 = gsap.timeline();
+    // gsap.registerPlugin(ScrollTrigger);
+    // var t1 = gsap.timeline();
     // nav progress
 
-    t1.from(
+    gsap.from(
       '.carousel',
       {
         y: '200%',
