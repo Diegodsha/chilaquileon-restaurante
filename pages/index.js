@@ -9,6 +9,7 @@ import Link from 'next/link';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import Sauce from '../components/Sauce';
+import { useEffect } from 'react';
 
 // import { motion } from 'framer-motion';
 
@@ -42,7 +43,7 @@ export default function Home() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme);
 
-  const changeTheme = (e) => {
+/*   const changeTheme = (e) => {
     const color = e.target.textContent;
     // const body = document.querySelector(body)
     // body.style ='padding: 1rem'
@@ -53,7 +54,47 @@ export default function Home() {
   };
   <button onClick={(e) => changeTheme(e)}>
     {theme.color === 'dark' ? 'dark' : 'light'}
-  </button>;
+  </button>; */
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".dish1", {
+      scrollTrigger: {
+        trigger: ".dish1",
+        start: "bottom bottom",
+        toggleActions: "restart none none none",
+      },
+      x: -500,
+      opacity: 1,
+      duration: 1.2,
+      stagger: 0.3,
+    });
+
+    gsap.from(".dish2", {
+      scrollTrigger: {
+        trigger: ".dish2",
+        start: "bottom bottom",
+        toggleActions: "restart none none none",
+      },
+      x: -500,
+      opacity: 1,
+      duration: 1.2,
+      stagger: 1,
+    });
+
+    gsap.from(".dish3", {
+      scrollTrigger: {
+        trigger: ".dish3",
+        start: "bottom bottom",
+        toggleActions: "restart none none none",
+      },
+      x: -500,
+      opacity: 1,
+      duration: 1.2,
+      stagger: 1.5,
+    });
+  }, [])
+
   return (
     <div className={` ${backStyle.index}  container-fluid px-2`}>
       <Head>
@@ -73,7 +114,12 @@ export default function Home() {
               height={180}
             />
           </div>
-          <p className={`${sectionStyle.satisfy} ${sectionStyle.titleShadow} display-6 fw-bold mb-5`}> Chilaquiles hechos con amor</p>
+          <p
+            className={`${sectionStyle.satisfy} ${sectionStyle.titleShadow} display-6 fw-bold mb-5`}
+          >
+            {' '}
+            Chilaquiles hechos con amor
+          </p>
           <div className="row justify-content-center my-5">
             <div className="col-6 col-md-4">
               <div
@@ -85,7 +131,7 @@ export default function Home() {
               >
                 <Image
                   priority
-                  src="/images/chimiquil.jpg"
+                  src="/images/img8.jpg"
                   width={550}
                   height={450}
                   // layout='fill'
@@ -102,9 +148,10 @@ export default function Home() {
                     : sectionStyle.shadowLight
                 }`}
               >
+                {/* <span className='position-absolute'>Mollequil</span> */}
                 <Image
                   priority
-                  src="/images/torta.jpg"
+                  src="/images/img10.jpg"
                   width={550}
                   height={450}
                   // layout='fill'
@@ -165,8 +212,10 @@ export default function Home() {
                 src="https://img.icons8.com/metro/50/000000/virus.png"
                 alt="virus-icon"
               />
-              <h3 className={`${sectionStyle.satisfy}`}>Instalaciones sanitizadas</h3>
-              <p >
+              <h3 className={`${sectionStyle.satisfy}`}>
+                Instalaciones sanitizadas
+              </h3>
+              <p>
                 Nos preocupamos por tu bienestar, nuestro personal está
                 capacitado para brindarte las condiciones de salubridad
                 necesarias para que disfrutes tus chilaquiles sin ningúna
@@ -181,8 +230,10 @@ export default function Home() {
                 src="https://img.icons8.com/ios/64/000000/family--v1.png"
                 alt="fam-icon"
               />
-              <h3 className={`${sectionStyle.satisfy}`}>Ambiente familiar y tranquilo</h3>
-              <p >
+              <h3 className={`${sectionStyle.satisfy}`}>
+                Ambiente familiar y tranquilo
+              </h3>
+              <p>
                 Los chilaquiles fueron hechos para disfrutarse y Chilaquileón es
                 el lugar indicado para saborearlos junto a tu familia y amigos.
               </p>
@@ -192,7 +243,9 @@ export default function Home() {
         <section className="container-fluid article my-5">
           <div className="row">
             <div className="col-12 text-center">
-              <h2 className={`${sectionStyle.titleShadow} ${sectionStyle.satisfy} my-5 display-2`}>
+              <h2
+                className={`${sectionStyle.titleShadow} ${sectionStyle.satisfy} my-5 display-2`}
+              >
                 No somos solo chilaquiles
               </h2>
             </div>
@@ -272,7 +325,7 @@ export default function Home() {
                   >
                     <Image
                       priority
-                      src="/images/chimiquil.jpg"
+                      src="/images/img4.jpg"
                       className="img-fluid"
                       // layout="fill"
                       width={400}
@@ -292,7 +345,7 @@ export default function Home() {
                   >
                     <Image
                       priority
-                      src="/images/omelette.jpg"
+                      src="/images/img2.jpg"
                       className="img-fluid"
                       // layout="fill"
                       width={400}
@@ -310,7 +363,7 @@ export default function Home() {
                   </p>
                   <div className="d-flex align-items-center">
                     <span className="text-secondary">Salsa recomendada:</span>
-                    <Sauce hotLevel={3} type='Chipotle'/>
+                    <Sauce hotLevel={3} type="Chipotle" />
                   </div>
                 </div>
               </div>
@@ -338,7 +391,7 @@ export default function Home() {
                 >
                   <Image
                     priority
-                    src="/images/torta.jpg"
+                    src="/images/img21.jpg"
                     className="img-fluid"
                     // layout="fill"
                     width={400}
@@ -355,7 +408,7 @@ export default function Home() {
                   </p>
                   <div className="d-flex align-items-center">
                     <span className="text-secondary">Salsa recomendada:</span>
-                    <Sauce hotLevel={2} type='Verde'/>
+                    <Sauce hotLevel={2} type="Verde" />
                   </div>
                 </div>
               </div>
@@ -383,7 +436,7 @@ export default function Home() {
                 >
                   <Image
                     priority
-                    src="/images/sartenazo.jpg"
+                    src="/images/img12.jpg"
                     className="img-fluid"
                     // layout="fill"
                     width={400}
@@ -401,7 +454,7 @@ export default function Home() {
                   {/* <br /> <br /> */}
                   <div className="d-flex align-items-center">
                     <span className="text-secondary">Salsa recomendada:</span>
-                    <Sauce hotLevel={5} type='Habanero'/>
+                    <Sauce hotLevel={5} type="Habanero" />
                   </div>
                 </div>
               </div>
@@ -440,14 +493,21 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="location" className="location container-fluid my-5">
+        <section id="location" className={`${sectionStyle.location} container-fluid `}>
           <div className="row">
-            <div className="findUs col-12 col-lg-6 d-flex align-items-center justify-content-center mb-4">
-              <h3 className={`${sectionStyle.titleShadow} display-3`}>
+            <div className="findUs d-flex flex-column col-12 col-lg-6 d-flex align-items-center justify-content-center mb-5">
+              <h3 className={`${sectionStyle.titleShadow} display-3 mb-4`}>
                 Encuentranos!!
               </h3>
+              <video
+                autoPlay
+                loop
+                style={{ maxWidth: '500px', maxHeight: '450px', borderRadius: '10px'}}
+              >
+                <source src="/videos/video2.mp4" />
+              </video>
             </div>
-            <div className="map col-12 col-lg-6 pe-0">
+            <div className="map col-12 col-lg-6 pe-0 d-flex align-items-center">
               <iframe
                 className="w-100"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.345903866533!2d-101.61712828574282!3d21.09877139076193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbddf952fdfb1%3A0x85d2c1d26bf57203!2sChilaquileon!5e0!3m2!1sen!2smx!4v1636490261140!5m2!1sen!2smx"

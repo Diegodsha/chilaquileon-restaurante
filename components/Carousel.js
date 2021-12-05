@@ -1,9 +1,28 @@
 import Image from 'next/image';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import carouselStyle from '../styles/Carrousel.module.sass';
 
 const Carousel = () => {
   const theme = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    var t1 = gsap.timeline();
+    // nav progress
+
+    t1.from(
+      '.carousel',
+      {
+        y: '200%',
+        delay: 1,
+        opacity: 0,
+        duration: 3,
+        ease: Power4.easeOut, //'elastic'
+      },
+      '-=.7'
+    );
+  }, []);
 
   return (
     <div

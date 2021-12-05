@@ -2,10 +2,7 @@ import Head from 'next/head';
 import '../styles/globals.css';
 import { AnimatePresence } from 'framer-motion';
 import Layout from '../components/Layout';
-import { Provider } from 'react-redux';
 import { wrapper } from '../redux/store';
-// import makeStore from '../redux/store';
-// import withRedux from 'next-redux-wrapper';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -44,9 +41,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <AnimatePresence exitBeforeEnter>
         <Layout>
-          {/* <Provider store={makeStore}> */}
-            <Component {...pageProps} />
-          {/* </Provider> */}
+          <Component {...pageProps} />
         </Layout>
       </AnimatePresence>
     </>

@@ -19,15 +19,6 @@ const Nav = () => {
     
   };
 
-  // const changeT = () => {
-  //   // setChecked(!checked);
-  //   if (checked) {
-  //     dispatch(setLightTheme('ligth'));
-  //   } else {
-  //     dispatch(setDarkTheme('dark'));
-  //   }
-  // };
-
   useEffect(() => {
     const localTheme = localStorage.getItem('checked') ? JSON.parse(localStorage.getItem('checked'))
     : false
@@ -113,7 +104,7 @@ const Nav = () => {
             </li> */}
             <li className="nav-item dropdown me-2">
               <a
-                className="nav-link active dropdown-toggle p-0"
+                className={`${styledNav.navIn} nav-link dropdown-toggle p-0`}
                 href="#"
                 id="navbarDropdown"
                 role="button"
