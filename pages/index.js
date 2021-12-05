@@ -43,7 +43,7 @@ export default function Home() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme);
 
-/*   const changeTheme = (e) => {
+  /*   const changeTheme = (e) => {
     const color = e.target.textContent;
     // const body = document.querySelector(body)
     // body.style ='padding: 1rem'
@@ -59,46 +59,44 @@ export default function Home() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-  var t1 = gsap.timeline();
+    var t1 = gsap.timeline();
 
-    gsap.from(".dish", {
+    gsap.from('.dish', {
       scrollTrigger: {
-        trigger: ".dish1",
-        start: "top bottom",
-        toggleActions: "restart none none none",
+        trigger: '.dish1',
+        start: 'top bottom',
+        toggleActions: 'restart none none none',
       },
       y: '-90%',
       opacity: 0,
       duration: 2,
-      ease:'elastic' ,
+      ease: 'elastic',
       stagger: 0.6,
-      
     });
 
-
-    gsap.from("#instalations", {
+    gsap.from('#instalations', {
       scrollTrigger: {
-        trigger: "#instalations",
-        start: "top 50%",
-        toggleActions: "restart none none none",
+        trigger: '#instalations',
+        start: 'top 50%',
+        toggleActions: 'restart none none none',
       },
-      x: "-30%",
+      x: '-30%',
       opacity: 0,
       duration: 2,
       ease: Power4.easeOut,
     });
 
-    gsap.from(".soloChilaquiles", {
-    //   scrollTrigger: {
-    //     trigger: ".soloChilaquiles",
-    //     start: "bottom bottom",
-    //     // toggleActions: "restart none none none",
-    //   },
-    //   x: "100%",
-    //   opacity: 0,
-    //   duration: 2,
-    //   ease: Power4.easeOut,
-    // });
+    gsap.from('.soloChilaquiles', {
+      scrollTrigger: {
+        trigger: '.soloChilaquiles',
+        start: 'bottom bottom',
+        // toggleActions: "restart none none none",
+      },
+      x: '100%',
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+    });
 
     // gsap.from(".soloChilaquilesImg", {
     //   scrollTrigger: {
@@ -112,9 +110,7 @@ export default function Home() {
     //   ease: Power4.easeOut,
     //   stagger: 0.9,
     // });
-
-    
-  }, [])
+  }, []);
 
   return (
     <div className={` ${backStyle.index}  container-fluid px-2`}>
@@ -514,7 +510,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="location" className={`${sectionStyle.location} container-fluid `}>
+        <section
+          id="location"
+          className={`${sectionStyle.location} container-fluid `}
+        >
           <div className="row">
             <div className="findUs d-flex flex-column col-12 col-lg-6 d-flex align-items-center justify-content-center mb-5">
               <h3 className={`${sectionStyle.titleShadow} display-3 mb-4`}>
@@ -523,7 +522,11 @@ export default function Home() {
               <video
                 autoPlay
                 loop
-                style={{ maxWidth: '500px', maxHeight: '450px', borderRadius: '10px'}}
+                style={{
+                  maxWidth: '500px',
+                  maxHeight: '450px',
+                  borderRadius: '10px',
+                }}
               >
                 <source src="/videos/video2.mp4" />
               </video>
