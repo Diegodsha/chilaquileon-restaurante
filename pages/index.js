@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Carousel from '../components/Carousel';
-import { setDarkTheme, setLightTheme } from '../redux/actions';
 import backStyle from '../styles/background.module.css';
 import sectionStyle from '../styles/section.module.sass';
 import Link from 'next/link';
@@ -11,74 +10,32 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import Sauce from '../components/Sauce';
 import { useEffect } from 'react';
 
-// import { motion } from 'framer-motion';
 
-/* const easing = [0.6, -0.05, 0.01, 0.99];
-
-const fadeInUp = {
-  initial: {
-    x: 60,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: 1,
-      duration: 0.6,
-      ease: easing,
-    },
-  },
-};
-
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-}; */
 
 export default function Home() {
-  const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme);
-
-  /*   const changeTheme = (e) => {
-    const color = e.target.textContent;
-    // const body = document.querySelector(body)
-    // body.style ='padding: 1rem'
-    console.log(body);
-    color === 'light'
-      ? dispatch(setDarkTheme('dark'))
-      : dispatch(setLightTheme('ligth'));
-  };
-  <button onClick={(e) => changeTheme(e)}>
-    {theme.color === 'dark' ? 'dark' : 'light'}
-  </button>; */
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    var t1 = gsap.timeline();
-
     gsap.from('.dish', {
       scrollTrigger: {
-        trigger: '.dish1',
-        start: 'top bottom',
-        toggleActions: 'restart none none none',
+        trigger: '.dish',
+        start: 'top center',
+        toggleActions: 'play none none none',
       },
       y: '-90%',
       opacity: 0,
       duration: 2,
       ease: 'elastic',
-      stagger: 0.6,
+      stagger: 0.5,
     });
 
     gsap.from('#instalations', {
       scrollTrigger: {
         trigger: '#instalations',
-        start: 'top bottom',
-        toggleActions: 'restart none none none',
+        start: 'top center',
+        toggleActions: 'play none none none',
       },
       x: '-30%',
       opacity: 0,
@@ -89,8 +46,8 @@ export default function Home() {
     gsap.from('.soloChilaquiles', {
       scrollTrigger: {
         trigger: '.soloChilaquiles',
-        start: 'top bottom',
-        toggleActions: "restart none none none",
+        start: 'bottom bottom',
+        toggleActions: 'restart none none none',
       },
       x: '-30%',
       opacity: 0,
@@ -98,18 +55,168 @@ export default function Home() {
       ease: Power4.easeOut,
     });
 
-    gsap.from(".soloChilaquilesImg", {
+    gsap.from('.soloChilaquilesImg1', {
       scrollTrigger: {
-        trigger: ".soloChilaquilesImg",
-        start: "top bottom",
-        toggleActions: "restart none none none",
+        trigger: '.soloChilaquilesImg1',
+        start: 'top 70%',
+        toggleActions: 'restart none none none',
       },
-      y: "30%",
+      y: '50%',
       opacity: 0,
       duration: 2,
       ease: Power4.easeOut,
-      stagger: 0.9,
     });
+
+    gsap.from('.soloChilaquilesImgText', {
+      scrollTrigger: {
+        trigger: '.soloChilaquilesImgText',
+        start: 'top 70%',
+        toggleActions: 'restart none none none',
+      },
+      y: '50%',
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.hambre', {
+      scrollTrigger: {
+        trigger: '.hambre',
+        start: 'bottom bottom',
+        toggleActions: 'restart none none none',
+      },
+      x: '-30%',
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.about', {
+      scrollTrigger: {
+        trigger: '.about',
+        start: 'top 60%',
+        toggleActions: 'restart none none none',
+      },
+      x: '-30%',
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.aboutChimiquil', {
+      scrollTrigger: {
+        trigger: '.aboutChimiquil',
+        start: 'bottom bottom',
+        toggleActions: 'restart none none none',
+      },
+      y: '50%',
+      opacity: 0,
+      duration: 2,
+      stagger: 0.4,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.aboutTorta', {
+      scrollTrigger: {
+        trigger: '.aboutTorta',
+        start: 'bottom bottom',
+        toggleActions: 'restart none none none',
+      },
+      y: '50%',
+      opacity: 0,
+      duration: 2,
+      stagger: 0.4,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.aboutSarten', {
+      scrollTrigger: {
+        trigger: '.aboutSarten',
+        start: 'bottom bottom',
+        toggleActions: 'restart none none none',
+      },
+      y: '50%',
+      opacity: 0,
+      duration: 2,
+      stagger: 0.4,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.sauce', {
+      scrollTrigger: {
+        trigger: '.sauce',
+        start: 'bottom bottom',
+        toggleActions: 'restart none none none',
+      },
+      y: '50%',
+      opacity: 0,
+      duration: 2,
+      stagger: 0.5,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.sauce1', {
+      scrollTrigger: {
+        trigger: '.sauce1',
+        start: 'bottom bottom',
+        toggleActions: 'restart none none none',
+      },
+      y: '50%',
+      opacity: 0,
+      duration: 2,
+      stagger: 0.5,
+      ease: Power4.easeOut,
+    });
+    gsap.from('.sauce2', {
+      scrollTrigger: {
+        trigger: '.sauce2',
+        start: 'bottom bottom',
+        toggleActions: 'restart none none none',
+      },
+      y: '50%',
+      opacity: 0,
+      duration: 2,
+      stagger: 0.5,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.encuentranos', {
+      scrollTrigger: {
+        trigger: '.encuentranos',
+        start: 'bottom bottom',
+        toggleActions: 'restart none none none',
+      },
+      x: '-30%',
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.mapVideo', {
+      scrollTrigger: {
+        trigger: '.mapVideo',
+        start: 'top center',
+        toggleActions: 'restart none none none',
+      },
+      y: '-50%',
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.map', {
+      scrollTrigger: {
+        trigger: '.map',
+        start: 'top 60%',
+        toggleActions: 'restart none none none',
+      },
+      y: '-30%',
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+    });
+
+
   }, []);
 
   return (
@@ -152,7 +259,7 @@ export default function Home() {
                   width={550}
                   height={450}
                   // layout='fill'
-                  className={`${sectionStyle.notOnly}`}
+                  className={`${sectionStyle.notOnly} dishImg`}
                   alt="platillo"
                 />
               </div>
@@ -172,7 +279,7 @@ export default function Home() {
                   width={550}
                   height={450}
                   // layout='fill'
-                  className={`${sectionStyle.notOnly}`}
+                  className={`${sectionStyle.notOnly} dishImg`}
                   alt="platillo"
                 />
               </div>
@@ -191,7 +298,7 @@ export default function Home() {
                   width={550}
                   height={450}
                   // layout='fill'
-                  className={`${sectionStyle.notOnly}`}
+                  className={`${sectionStyle.notOnly} dishImg`}
                   alt="platillo"
                 />
               </div>
@@ -271,7 +378,7 @@ export default function Home() {
                 theme.color === 'dark'
                   ? sectionStyle.shadowDark
                   : sectionStyle.shadowLight
-              } col-12 col-md-6 text-center position-relative soloChilaquilesImg`}
+              } col-12 col-md-6 text-center position-relative soloChilaquilesImg1`}
               // style={{ height:'450px'}}
             >
               <Image
@@ -284,7 +391,7 @@ export default function Home() {
                 alt="platillo"
               />
             </div>
-            <div className="col-12 col-md-6 text-start d-flex align-items-center p-0 p-md-2 soloChilaquilesImg">
+            <div className="col-12 col-md-6 text-start d-flex align-items-center p-0 p-md-2 soloChilaquilesImgText">
               <p
                 className={`${sectionStyle.ìnstalations} ${
                   theme.color === 'dark'
@@ -305,7 +412,7 @@ export default function Home() {
           </div>
         </section>
         <h2
-          className={`${sectionStyle.titleShadow} ${sectionStyle.satisfy} my-5 display-2 text-center`}
+          className={`${sectionStyle.titleShadow} ${sectionStyle.satisfy} my-5 display-2 text-center hambre`}
         >
           Tienes Hambre? Checa ésto
         </h2>
@@ -338,7 +445,7 @@ export default function Home() {
                       theme.color === 'dark'
                         ? sectionStyle.shadowDark
                         : sectionStyle.shadowLight
-                    }`}
+                    } aboutChimiquil`}
                   >
                     <Image
                       priority
@@ -358,7 +465,7 @@ export default function Home() {
                       theme.color === 'dark'
                         ? sectionStyle.shadowDark
                         : sectionStyle.shadowLight
-                    }`}
+                    } aboutChimiquil`}
                   >
                     <Image
                       priority
@@ -379,8 +486,12 @@ export default function Home() {
                     sencillo, ¿no? Pero que eso no te engañe, porque no, no son
                   </p>
                   <div className="d-flex align-items-center">
-                    <span className="text-secondary">Salsa recomendada:</span>
-                    <Sauce hotLevel={3} type="Chipotle" />
+                    <span className="text-secondary sauce">
+                      Salsa recomendada:
+                    </span>
+                    <div className='sauce'>
+                      <Sauce hotLevel={3} type="Chipotle" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -404,7 +515,7 @@ export default function Home() {
                     theme.color === 'dark'
                       ? sectionStyle.shadowDark
                       : sectionStyle.shadowLight
-                  }  video video3 col-12 col-md-6 order-1 order-md-2 d-flex justify-content-center my-4`}
+                  }  video video3 col-12 col-md-6 order-1 order-md-2 d-flex justify-content-center my-4 aboutTorta`}
                 >
                   <Image
                     priority
@@ -424,8 +535,11 @@ export default function Home() {
                     sencillo, ¿no? Pero que eso no te engañe, porque no, no son
                   </p>
                   <div className="d-flex align-items-center">
-                    <span className="text-secondary">Salsa recomendada:</span>
+                    <span className="text-secondary sauce1">Salsa recomendada:</span>
+                    <div className='sauce1'>
+
                     <Sauce hotLevel={2} type="Verde" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -449,7 +563,7 @@ export default function Home() {
                     theme.color === 'dark'
                       ? sectionStyle.shadowDark
                       : sectionStyle.shadowLight
-                  } video video2 col-12 col-md-6 order-1 d-flex justify-content-center my-4`}
+                  } video video2 col-12 col-md-6 order-1 d-flex justify-content-center my-4 aboutSarten`}
                 >
                   <Image
                     priority
@@ -470,14 +584,17 @@ export default function Home() {
                   </p>
                   {/* <br /> <br /> */}
                   <div className="d-flex align-items-center">
-                    <span className="text-secondary">Salsa recomendada:</span>
+                    <span className="text-secondary sauce2">Salsa recomendada:</span>
+                    <div className='sauce2'>
+
                     <Sauce hotLevel={5} type="Habanero" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="navegacion-menu col-12 col-md-6 d-flex justify-content-around mt-5">
-              <div className="verMenu">
+              <div className={`${sectionStyle.verMenu}`}>
                 <Link href="/menu">
                   <a
                     className={`${
@@ -516,10 +633,11 @@ export default function Home() {
         >
           <div className="row">
             <div className="findUs d-flex flex-column col-12 col-lg-6 d-flex align-items-center justify-content-center mb-5">
-              <h3 className={`${sectionStyle.titleShadow} display-3 mb-4`}>
+              <h3 className={`${sectionStyle.titleShadow} display-3 mb-4 encuentranos`}>
                 Encuentranos!!
               </h3>
               <video
+              className='mapVideo'
                 autoPlay
                 loop
                 style={{
