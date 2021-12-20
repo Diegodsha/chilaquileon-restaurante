@@ -400,13 +400,7 @@ export default function Home() {
                 } p-4 mt-4 mt-0-md   ${sectionStyle.nunito}`}
               >
                 {' '}
-                Chilaquileón, como su nombre lo dice, es un restaurante
-                mexicano, lleno de delicias y experiencias en cada bocado,
-                nuestra especialidad son los chilaquiles, suena un platillo
-                sencillo, ¿no? Pero que eso no te engañe, porque no, no son
-                “solo chilaquiles”, nuestra variedad de salsas caseras, totopos,
-                nuestras varias presentaciones de platillos y nuestra
-                preparación, te encantarán.
+                Somos un restaurante mexicano con un enorme gusto (y tal vez ligera obsesión) por los chilaquiles, lo que nos hace destacar al lograr una combinación unica de platillos sabores y experiencias. En Chilaquileón nos esforzamos para llevar a tu mesa lo mejor del mundo de los chilaquiles con un toque de amor y ligero sason hogareño que hace que cada bocado genere esa sensación de satisfacción que solo la comida mexicana preparada con tanto cariño puede traer.
               </p>
             </div>
           </div>
@@ -454,7 +448,7 @@ export default function Home() {
                       // layout="fill"
                       width={400}
                       height={400}
-                      alt="..."
+                      alt="chimiquil rojo"
                     />
                   </div>
                 </div>
@@ -474,16 +468,13 @@ export default function Home() {
                       // layout="fill"
                       width={400}
                       height={400}
-                      alt="..."
+                      alt="chimiquil verde"
                     />
                   </div>
                 </div>
                 <div className="col-12 d-flex flex-column justify-content-center align-items-center">
                   <p>
-                    Chilaquileón, como su nombre lo dice, es un restaurante
-                    mexicano, lleno de delicias y experiencias en cada bocado,
-                    nuestra especialidad son los chilaquiles, suena un platillo
-                    sencillo, ¿no? Pero que eso no te engañe, porque no, no son
+                    Uno de nuestros platillos estrella: Delicioso burrito gigante con doble tortilla de harina bañado en salsa casera y relleno de chilaquiles preparados al mommento, acompañado de cebolla, cilantro, rico queso ranchero y crema... (acompañalo con tu carne preferida)
                   </p>
                   <div className="d-flex align-items-center">
                     <span className="text-secondary sauce">
@@ -529,10 +520,8 @@ export default function Home() {
                 </div>
                 <div className="col-12 col-md-6 order-2 order-md-1 d-flex flex-column justify-content-center align-items-center">
                   <p className="text-center text-md-start">
-                    Chilaquileón, como su nombre lo dice, es un restaurante
-                    mexicano, lleno de delicias y experiencias en cada bocado,
-                    nuestra especialidad son los chilaquiles, suena un platillo
-                    sencillo, ¿no? Pero que eso no te engañe, porque no, no son
+                    ¿Conoces la clasica torta de chilaquiles?
+                    Pues esta delicia va más allá... te preguntaras, ¿Que la hace tan especial? eso es algo que como buen mexicano no puedes dejar para después, pidela, no te arrepentiras.
                   </p>
                   <div className="d-flex align-items-center">
                     <span className="text-secondary sauce1">Salsa recomendada:</span>
@@ -577,10 +566,9 @@ export default function Home() {
                 </div>
                 <div className="col-12 col-md-6 order-2 d-flex flex-column justify-content-center align-items-center">
                   <p className="text-center text-md-start">
-                    Chilaquileón, como su nombre lo dice, es un restaurante
-                    mexicano, lleno de delicias y experiencias en cada bocado,
-                    nuestra especialidad son los chilaquiles, suena un platillo
-                    sencillo, ¿no? Pero que eso no te engañe, porque no, no son{' '}
+                  ¿Sartenazo? ¿que es eso? ¿me van a pegar si lo pido?
+                  El Sartenazo es una creación deliciosa que la familia de chilaquileon pone a disposión de tu exigente paladar, no te preocupes, no duele, solo pica.
+                  Sarten con orilla de totopos, lleno de huevo revuelto a la mexicana combinado con frijoles caseros y bañado en salsa, le agregamos queso ranchero, cebolla y cilantro.
                   </p>
                   {/* <br /> <br /> */}
                   <div className="d-flex align-items-center">

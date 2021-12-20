@@ -1,86 +1,43 @@
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import musicStyles from '../styles/Music.module.sass';
 import sectionStyle from '../styles/section.module.sass';
 
-//animate: defines animation
-//initial: defines initial state of animation or starting potin
-// exit: defines animation when exits
-
 const Musica = () => {
   const theme = useSelector((state) => state.theme);
 
+  useEffect(() => {
+    gsap.from('.music', {
+      y: '-50%',
+      opacity: 0,
+      duration: 2,
+      stagger:0.3,
+      delay:1,
+      ease: Power4.easeOut,
+    });
+  }, [])
+
   return (
-    <motion.div
-      exit={{ opacity: 0 }}
-      initial="inital"
-      animate="animate"
-      variants={{
-        initial: {
-          scale: 0.8,
-          opacity: 0,
-        },
-        animate: {
-          scale: 1,
-          opacity: 1,
-          // transition: {
-          //   delay: 0.4,
-          // },
-        },
-      }}
+    <div
       className={`${musicStyles.section} ${
         theme.color === 'dark'
           ? musicStyles.sectionDark
           : musicStyles.sectionLight
       } container d-flex flex-column align-items-center mb-5 py-4`}
     >
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {
-            scale: 0.8,
-            opacity: 0,
-          },
-          visible: {
-            scale: 1,
-            opacity: 1,
-            transition: {
-              delay: 0.4,
-            },
-          },
-        }}
+      <div
       >
         <h1
-          className={`${musicStyles.titleShadow} ${sectionStyle.satisfy} display-3 mb-4 text-center`}
+          className={`${musicStyles.titleShadow} ${sectionStyle.satisfy} music display-3 mb-4 text-center`}
         >
           Chilaquiles & chill
         </h1>
-      </motion.div>
-      <motion.div
+      </div>
+      <div
         className="w-100 d-flex justify-content-center"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {
-            scale: 0.8,
-            opacity: 0,
-            translateX: -500,
-          },
-          visible: {
-            scale: 1,
-            opacity: 1,
-
-            translateX: 0,
-            transition: {
-              delay: 2,
-            },
-          },
-        }}
       >
         <iframe
-          className={`${musicStyles.playlist} ${
+          className={`music ${musicStyles.playlist} ${
             theme.color === 'dark'
               ? musicStyles.playlistDark
               : musicStyles.playlistLight
@@ -95,12 +52,12 @@ const Musica = () => {
           allowFullScreen={true}
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         ></iframe>
-      </motion.div>
-      <h3 className={`${musicStyles.titleShadow} ${sectionStyle.satisfy}  display-3 my-4 text-center`}>
+      </div>
+      <h3 className={`${musicStyles.titleShadow} ${sectionStyle.satisfy} music display-3 my-4 text-center`}>
         Música para saborear
       </h3>
       <iframe
-        className={`${musicStyles.playlist} ${
+        className={`music ${musicStyles.playlist} ${
           theme.color === 'dark'
             ? musicStyles.playlistDark
             : musicStyles.playlistLight
@@ -115,7 +72,7 @@ const Musica = () => {
         allowFullScreen={true}
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       ></iframe>
-    </motion.div>
+    </div>
   );
 };
 

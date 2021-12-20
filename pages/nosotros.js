@@ -1,9 +1,42 @@
 import usStyles from '../styles/us.module.sass';
 import sectionStyle from '../styles/section.module.sass';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const Nosotros = () => {
   const theme = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    gsap.from('.nosotros1', {
+      y: '-50%',
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.nosotros2', {
+      y: '50%',
+      opacity: 0,
+      duration: 2,
+      delay: 0.7,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.nosotros3', {
+      x: '-50%',
+      opacity: 0,
+      duration: 2,
+      delay:1.2,
+      ease: Power4.easeOut,
+    });
+
+    gsap.from('.nosotrosVideo', {
+      opacity: 0,
+      duration: 2,
+      delay:2,
+      ease: Power4.easeOut,
+    });
+  }, [])
 
   return (
     <div className={`${usStyles.section} row`}>
@@ -18,7 +51,7 @@ const Nosotros = () => {
       <div className={` col-12 col-lg-3 order-1 mt-5 mt-lg-0 justify-content-center d-flex align-items-center`}>
         {' '}
         <video
-          className={`${usStyles.shadow} w-lg-100`}
+          className={`${usStyles.shadow} w-lg-100 nosotrosVideo`}
           autoPlay
           loop
           style={{
@@ -37,7 +70,7 @@ const Nosotros = () => {
               theme.color === 'dark'
                 ? sectionStyle.instalationsDark
                 : sectionStyle.instalationsLight
-            } col-12   text-center my-5 my-lg-0 p-4`}
+            } col-12   text-center my-5 my-lg-0 p-4 nosotros1`}
           >
             En Chilaquileón todo está hecho con amor para ti, no somos solo
             chilaquiles, somos esfuerzo, trabajo en equipo y un amor enorme por
@@ -49,7 +82,7 @@ const Nosotros = () => {
               theme.color === 'dark'
                 ? sectionStyle.instalationsDark
                 : sectionStyle.instalationsLight
-            } col-9  text-center my-5 p-4`}
+            } col-9  text-center my-5 p-4 nosotros3`}
           >
             Somos el lugar perfecto para comer delicioso en compañía de tus
             personas favoritas, un lugar para relajarse, tomar un cafecito (el
@@ -61,7 +94,7 @@ const Nosotros = () => {
               theme.color === 'dark'
                 ? sectionStyle.instalationsDark
                 : sectionStyle.instalationsLight
-            } col-12   text-center my-5 my-lg-0 p-4`}
+            } col-12   text-center my-5 my-lg-0 p-4 nosotros2`}
           >
             Nuestros platillos van desde los riquísimos y tradicionales
             chilaquiles, hasta sopes de chilaquiles, torta de chilaquiles,
@@ -73,7 +106,7 @@ const Nosotros = () => {
       <div className="col-12 col-lg-3 order-3 justify-content-center d-flex align-items-center">
         {' '}
         <video
-          className={`${usStyles.shadow} w-lg-100`}
+          className={`${usStyles.shadow} w-lg-100 nosotrosVideo`}
           autoPlay
           loop
           style={{
