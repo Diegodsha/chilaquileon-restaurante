@@ -1,16 +1,13 @@
-import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import carouselStyle from '../styles/Carrousel.module.sass';
+import sectionStyle from '../styles/section.module.sass'
 
 const Carousel = () => {
   const theme = useSelector((state) => state.theme);
 
   useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger);
-    // var t1 = gsap.timeline();
-    // nav progress
-
     gsap.from(
       '.carousel',
       {
@@ -18,7 +15,7 @@ const Carousel = () => {
         delay: 1,
         opacity: 0,
         duration: 3,
-        ease: Power4.easeOut, //'elastic'
+        ease: Power4.easeOut,
       },
       '-=.7'
     );
@@ -54,54 +51,40 @@ const Carousel = () => {
       </div>
       <div className={`${carouselStyle.inner} carousel-inner`}>
         <div className="carousel-item active" data-bs-interval="10000">
-          {/* <Image
-          priority
-            src="/images/sartenazo.jpg"
-            width={1530}
-            height={532}
-            className="d-block w-100"
-            alt="..."
-          /> */}
+
           <div
             className={`${carouselStyle.carouselImg} ${carouselStyle.carouselImg1}`}
           />
           <div className="carousel-caption d-none d-md-block">
-            <h5 className={carouselStyle.textRed}>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
           </div>
         </div>
         <div className="carousel-item" data-bs-interval="2000">
-          {/* <Image
-            priority
-            src="/images/table.jpg"
-            width={600}
-            height={400}
-            className="d-block w-100"
-            alt="..."
-          /> */}
+
           <div
             className={`${carouselStyle.carouselImg} ${carouselStyle.carouselImg2}`}
           />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+          <div className="carousel-caption d-md-block">
           </div>
         </div>
         <div className="carousel-item">
-          {/* <Image
-            priority
-            src="/images/tradicionales.jpg"
-            width={600}
-            height={400}
-            className="d-block w-100"
-            alt="..."
-          /> */}
+
           <div
             className={`${carouselStyle.carouselImg} ${carouselStyle.carouselImg3}`}
           />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+          <div className="carousel-caption d-md-block">
+          <div className={`${sectionStyle.verMenu} m-5`}>
+                <Link href="/menu">
+                  <a
+                    className={`${
+                      theme.color === 'dark'
+                        ? sectionStyle.menuBtnDark
+                        : sectionStyle.menuBtnLight
+                    } btn fw-bold`}
+                  >
+                    Ver Menú Completo
+                  </a>
+                </Link>
+              </div>
           </div>
         </div>
       </div>
