@@ -6,14 +6,18 @@ import sectionStyle from '../styles/section.module.sass';
 import Sauce from '../components/Sauce';
 import { useEffect } from 'react';
 
+// const myLoader = ({ src, width, quality }) => {
+//   return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`
+// }
+
 const Menu = () => {
   const theme = useSelector((state) => state.theme);
 
   useEffect(() => {
-    gsap.from('.sauces',{
+    gsap.from('.sauces', {
       x: '-70%',
-      duration: 1
-    })
+      duration: 1,
+    });
 
     gsap.from('.indeciso', {
       scrollTrigger: {
@@ -27,8 +31,7 @@ const Menu = () => {
       ease: 'elastic',
       stagger: 0.5,
     });
-
-  }, [])
+  }, []);
 
   return (
     <div
@@ -45,7 +48,9 @@ const Menu = () => {
           >
             Haz llegado a la parte más dificil, elegir el platillo
           </h1>
-          <p className={`${sectionStyle.menuText} ${sectionStyle.satisfy} fw-bold`}>
+          <p
+            className={`${sectionStyle.menuText} ${sectionStyle.satisfy} fw-bold`}
+          >
             Nosotros sabemos que es muy complicado elegir un solo platillo, no
             te limites... elige 3
           </p>
@@ -76,6 +81,7 @@ const Menu = () => {
           className={` ${sectionStyle.notOnly} ${sectionStyle.shadowDark} ${sectionStyle.menuImg} col-12 col-md-11 col-lg-10 position-relative `}
         >
           <Image
+            // loader={myLoader}
             priority
             src="/images/menu_2.jpg"
             // width={350}
@@ -98,8 +104,9 @@ const Menu = () => {
         <p
           className={`${sectionStyle.menuText} ${sectionStyle.satisfy} text-center col-12 col-md-11 col-lg-10 mb-5 fw-bold indeciso`}
         >
-          No te preocupes, la respuesta está en tu corazón... (claro, y en cuanta
-          hambre tengas ) o pide una recomendación nuestro personal está altamente capacitado para detectar el platillo indicado para ti.
+          No te preocupes, la respuesta está en tu corazón... (claro, y en
+          cuanta hambre tengas ) o pide una recomendación nuestro personal está
+          altamente capacitado para detectar el platillo indicado para ti.
         </p>
         {/* <p className={`${sectionStyle.menuText} my-5`}>
           {' '}
@@ -109,6 +116,7 @@ const Menu = () => {
           className={`${sectionStyle.notOnly} ${sectionStyle.shadowDark} ${sectionStyle.menuImg} col-12 col-md-11 col-lg-10 position-relative `}
         >
           <Image
+            // loader={myLoader}
             priority
             src="/images/menu_1.jpg"
             // width={350}

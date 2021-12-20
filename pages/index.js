@@ -10,7 +10,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import Sauce from '../components/Sauce';
 import { useEffect } from 'react';
 
-
+// const myLoader = ({ src, width, quality }) => {
+//   return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`
+// }
 
 export default function Home() {
   const theme = useSelector((state) => state.theme);
@@ -106,7 +108,7 @@ export default function Home() {
     gsap.from('.aboutChimiquil', {
       scrollTrigger: {
         trigger: '.aboutChimiquil',
-        start: 'bottom bottom',
+        start: 'top center',
         toggleActions: 'restart none none none',
       },
       y: '50%',
@@ -119,26 +121,24 @@ export default function Home() {
     gsap.from('.aboutTorta', {
       scrollTrigger: {
         trigger: '.aboutTorta',
-        start: 'bottom bottom',
+        start: 'top center',
         toggleActions: 'restart none none none',
       },
       y: '50%',
       opacity: 0,
       duration: 2,
-      stagger: 0.4,
       ease: Power4.easeOut,
     });
 
     gsap.from('.aboutSarten', {
       scrollTrigger: {
         trigger: '.aboutSarten',
-        start: 'bottom bottom',
+        start: 'top center',
         toggleActions: 'restart none none none',
       },
       y: '50%',
       opacity: 0,
       duration: 2,
-      stagger: 0.4,
       ease: Power4.easeOut,
     });
 
@@ -215,8 +215,6 @@ export default function Home() {
       duration: 2,
       ease: Power4.easeOut,
     });
-
-
   }, []);
 
   return (
@@ -231,7 +229,8 @@ export default function Home() {
         <section className="container-fluid intro text-center">
           <div className="my-4">
             <Image
-              className={``}
+              // loader={myLoader}
+
               src="/images/logo-chilaquileon.png"
               alt="chilaquileon-logo"
               width={390}
@@ -254,6 +253,7 @@ export default function Home() {
                 }`}
               >
                 <Image
+                  // loader={myLoader}
                   priority
                   src="/images/img8.jpg"
                   width={550}
@@ -274,6 +274,7 @@ export default function Home() {
               >
                 {/* <span className='position-absolute'>Mollequil</span> */}
                 <Image
+                  // loader={myLoader}
                   priority
                   src="/images/img10.jpg"
                   width={550}
@@ -293,6 +294,7 @@ export default function Home() {
                 }`}
               >
                 <Image
+                  // loader={myLoader}
                   priority
                   src="/images/sartenazo.jpg"
                   width={550}
@@ -316,6 +318,7 @@ export default function Home() {
           <div className="row text-center">
             <div className="col-xs-12 col-sm-6 col-md-4">
               <Image
+                // loader={myLoader}
                 width={50}
                 height={50}
                 className="dog-icon"
@@ -330,6 +333,7 @@ export default function Home() {
             </div>
             <div className="col-xs-12 col-sm-6 col-md-4 my-4 my-sm-0">
               <Image
+                // loader={myLoader}
                 width={50}
                 height={50}
                 className="virus-icon"
@@ -348,6 +352,7 @@ export default function Home() {
             </div>
             <div className="col-sm-12 col-md-4">
               <Image
+                // loader={myLoader}
                 className="fam-icon"
                 width={50}
                 height={50}
@@ -382,6 +387,7 @@ export default function Home() {
               // style={{ height:'450px'}}
             >
               <Image
+                // loader={myLoader}
                 priority
                 src="/images/omelette.jpg"
                 width={550}
@@ -400,7 +406,14 @@ export default function Home() {
                 } p-4 mt-4 mt-0-md   ${sectionStyle.nunito}`}
               >
                 {' '}
-                Somos un restaurante mexicano con un enorme gusto (y tal vez ligera obsesión) por los chilaquiles, lo que nos hace destacar al lograr una combinación unica de platillos sabores y experiencias. En Chilaquileón nos esforzamos para llevar a tu mesa lo mejor del mundo de los chilaquiles con un toque de amor y ligero sason hogareño que hace que cada bocado genere esa sensación de satisfacción que solo la comida mexicana preparada con tanto cariño puede traer.
+                Somos un restaurante mexicano con un enorme gusto (y tal vez
+                ligera obsesión) por los chilaquiles, lo que nos hace destacar
+                al lograr una combinación unica de platillos sabores y
+                experiencias. En Chilaquileón nos esforzamos para llevar a tu
+                mesa lo mejor del mundo de los chilaquiles con un toque de amor
+                y ligero sason hogareño que hace que cada bocado genere esa
+                sensación de satisfacción que solo la comida mexicana preparada
+                con tanto cariño puede traer.
               </p>
             </div>
           </div>
@@ -442,6 +455,7 @@ export default function Home() {
                     } aboutChimiquil`}
                   >
                     <Image
+                      // loader={myLoader}
                       priority
                       src="/images/img4.jpg"
                       className="img-fluid"
@@ -462,6 +476,7 @@ export default function Home() {
                     } aboutChimiquil`}
                   >
                     <Image
+                      // loader={myLoader}
                       priority
                       src="/images/img2.jpg"
                       className="img-fluid"
@@ -474,13 +489,17 @@ export default function Home() {
                 </div>
                 <div className="col-12 d-flex flex-column justify-content-center align-items-center">
                   <p>
-                    Uno de nuestros platillos estrella: Delicioso burrito gigante con doble tortilla de harina bañado en salsa casera y relleno de chilaquiles preparados al mommento, acompañado de cebolla, cilantro, rico queso ranchero y crema... (acompañalo con tu carne preferida)
+                    Uno de nuestros platillos estrella: Delicioso burrito
+                    gigante con doble tortilla de harina bañado en salsa casera
+                    y relleno de chilaquiles preparados al mommento, acompañado
+                    de cebolla, cilantro, rico queso ranchero y crema...
+                    (acompañalo con tu carne preferida)
                   </p>
                   <div className="d-flex align-items-center">
                     <span className="text-secondary sauce">
                       Salsa recomendada:
                     </span>
-                    <div className='sauce'>
+                    <div className="sauce">
                       <Sauce hotLevel={3} type="Chipotle" />
                     </div>
                   </div>
@@ -509,6 +528,7 @@ export default function Home() {
                   }  video video3 col-12 col-md-6 order-1 order-md-2 d-flex justify-content-center my-4 aboutTorta`}
                 >
                   <Image
+                    // loader={myLoader}
                     priority
                     src="/images/img21.jpg"
                     className="img-fluid"
@@ -520,14 +540,17 @@ export default function Home() {
                 </div>
                 <div className="col-12 col-md-6 order-2 order-md-1 d-flex flex-column justify-content-center align-items-center">
                   <p className="text-center text-md-start">
-                    ¿Conoces la clasica torta de chilaquiles?
-                    Pues esta delicia va más allá... te preguntaras, ¿Que la hace tan especial? eso es algo que como buen mexicano no puedes dejar para después, pidela, no te arrepentiras.
+                    ¿Conoces la clasica torta de chilaquiles? Pues esta delicia
+                    va más allá... te preguntaras, ¿Que la hace tan especial?
+                    eso es algo que como buen mexicano no puedes dejar para
+                    después, pidela, no te arrepentiras.
                   </p>
                   <div className="d-flex align-items-center">
-                    <span className="text-secondary sauce1">Salsa recomendada:</span>
-                    <div className='sauce1'>
-
-                    <Sauce hotLevel={2} type="Verde" />
+                    <span className="text-secondary sauce1">
+                      Salsa recomendada:
+                    </span>
+                    <div className="sauce1">
+                      <Sauce hotLevel={2} type="Verde" />
                     </div>
                   </div>
                 </div>
@@ -555,6 +578,7 @@ export default function Home() {
                   } video video2 col-12 col-md-6 order-1 d-flex justify-content-center my-4 aboutSarten`}
                 >
                   <Image
+                    // loader={myLoader}
                     priority
                     src="/images/img12.jpg"
                     className="img-fluid"
@@ -566,16 +590,21 @@ export default function Home() {
                 </div>
                 <div className="col-12 col-md-6 order-2 d-flex flex-column justify-content-center align-items-center">
                   <p className="text-center text-md-start">
-                  ¿Sartenazo? ¿que es eso? ¿me van a pegar si lo pido?
-                  El Sartenazo es una creación deliciosa que la familia de chilaquileon pone a disposión de tu exigente paladar, no te preocupes, no duele, solo pica.
-                  Sarten con orilla de totopos, lleno de huevo revuelto a la mexicana combinado con frijoles caseros y bañado en salsa, le agregamos queso ranchero, cebolla y cilantro.
+                    ¿Sartenazo? ¿que es eso? ¿me van a pegar si lo pido? El
+                    Sartenazo es una creación deliciosa que la familia de
+                    chilaquileon pone a disposión de tu exigente paladar, no te
+                    preocupes, no duele, solo pica. Sarten con orilla de
+                    totopos, lleno de huevo revuelto a la mexicana combinado con
+                    frijoles caseros y bañado en salsa, le agregamos queso
+                    ranchero, cebolla y cilantro.
                   </p>
                   {/* <br /> <br /> */}
                   <div className="d-flex align-items-center">
-                    <span className="text-secondary sauce2">Salsa recomendada:</span>
-                    <div className='sauce2'>
-
-                    <Sauce hotLevel={5} type="Habanero" />
+                    <span className="text-secondary sauce2">
+                      Salsa recomendada:
+                    </span>
+                    <div className="sauce2">
+                      <Sauce hotLevel={5} type="Habanero" />
                     </div>
                   </div>
                 </div>
@@ -597,7 +626,7 @@ export default function Home() {
               </div>
             </div>
             <div className="siguenos col-12 col-md-6 d-flex justify-content-center align-items-center mt-5  ">
-              <p className="display-6"> Siguenos :)</p>{' '}
+              <p className="display-6"> Siguenos</p>{' '}
               <span className="mx-4">
                 <a href="https://www.facebook.com/chilaquileon/">
                   <FacebookIcon
@@ -621,11 +650,13 @@ export default function Home() {
         >
           <div className="row">
             <div className="findUs d-flex flex-column col-12 col-lg-6 d-flex align-items-center justify-content-center mb-5">
-              <h3 className={`${sectionStyle.titleShadow} display-3 mb-4 encuentranos`}>
+              <h3
+                className={`${sectionStyle.titleShadow} display-3 mb-4 encuentranos`}
+              >
                 Encuentranos!!
               </h3>
               <video
-              className='mapVideo'
+                className="mapVideo"
                 autoPlay
                 loop
                 style={{

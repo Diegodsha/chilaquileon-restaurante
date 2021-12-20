@@ -5,7 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDarkTheme, setLightTheme } from '../redux/actions';
 
-// const switchTheme = document.querySelector('#changeThemeSwitch');
+// const myLoader = ({ src, width, quality }) => {
+//   return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`
+// }
+
 const Nav = () => {
   const [checked, setChecked] = useState(false);
   const dispatch = useDispatch();
@@ -33,8 +36,6 @@ const Nav = () => {
   }, [checked, dispatch]);
 
   useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger);
-    // var t1 = gsap.timeline();
     // nav progress
     gsap.to('progress', {
       value: 100,
@@ -70,6 +71,7 @@ const Nav = () => {
         <Link href="/#">
           <a className="ms-3">
             <Image
+            // loader={myLoader}
               className={`${styledNav.logo}`}
               src="/images/logo-chilaquileon.png"
               alt="chilaquileon-logo"
@@ -78,9 +80,6 @@ const Nav = () => {
             />
           </a>
         </Link>
-        {/* <button onClick={(e) => changeTheme(e)}>
-          {theme.color === 'dark' ? 'dark' : 'light'}
-        </button> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -97,11 +96,6 @@ const Nav = () => {
           id="navbarNav"
         >
           <ul className={`${styledNav.navbar} navbar-nav`}>
-            {/* <li className="nav-item mx-md-2">
-              <Link className="nav-link active" aria-current="page" href="/">
-                Inicio
-              </Link>
-            </li> */}
             <li className="nav-item dropdown me-2">
               <a
                 className={`${styledNav.navIn} nav-link dropdown-toggle p-0`}
@@ -165,10 +159,8 @@ const Nav = () => {
                 type="checkbox"
                 role="switch"
                 id="changeThemeSwitch"
-                // onClick={(e) => changeT(e)}
                 checked={checked}
                 onChange={() => changeTheme()}
-                // ref={switchTheme}
               />
               
             </div>
