@@ -1,4 +1,4 @@
-import mediaStyles from '../styles/MediaBtn.module.sass';
+import mediaStyles from '../styles/mediaBtn.module.sass';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import WhatsApp from '@material-ui/icons/WhatsApp';
