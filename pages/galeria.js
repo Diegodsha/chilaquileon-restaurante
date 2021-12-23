@@ -11,6 +11,7 @@ const Galeria = () => {
       opacity: 0,
       duration: 2,
       stagger:0.3,
+      delay:2,
       ease: Power4.easeOut,
     });
   }, [])

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import '../styles/globals.css';
-import { AnimatePresence } from 'framer-motion';
 import Layout from '../components/Layout';
 import { wrapper } from '../redux/store';
 
@@ -14,6 +13,7 @@ function MyApp({ Component, pageProps }) {
           content="Restaurante de chilaquiles en diversas presentaciones"
         />
         <link rel="icon" href="/images/logo-chilaquileon.png" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossOrigin="anonymous" />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -39,11 +39,9 @@ function MyApp({ Component, pageProps }) {
           defer
         />
       </Head>
-      <AnimatePresence exitBeforeEnter>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </AnimatePresence>
     </>
   );
 }

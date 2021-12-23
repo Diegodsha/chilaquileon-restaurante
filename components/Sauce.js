@@ -1,6 +1,5 @@
 import sectionStyle from '../styles/section.module.sass';
 import WhatshotTwoToneIcon from '@material-ui/icons/WhatshotTwoTone';
-import { useEffect } from 'react';
 
 const Sauce = ({ hotLevel, type, border }) => {
 

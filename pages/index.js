@@ -346,7 +346,7 @@ export default function Home() {
               <p>
                 Nos preocupamos por tu bienestar, nuestro personal está
                 capacitado para brindarte las condiciones de salubridad
-                necesarias para que disfrutes tus chilaquiles sin ningúna
+                necesarias para que disfrutes tus chilaquiles sin ninguna
                 preocupación.
               </p>
             </div>
@@ -408,10 +408,10 @@ export default function Home() {
                 {' '}
                 Somos un restaurante mexicano con un enorme gusto (y tal vez
                 ligera obsesión) por los chilaquiles, lo que nos hace destacar
-                al lograr una combinación unica de platillos sabores y
+                al lograr una combinación única de platillos sabores y
                 experiencias. En Chilaquileón nos esforzamos para llevar a tu
                 mesa lo mejor del mundo de los chilaquiles con un toque de amor
-                y ligero sason hogareño que hace que cada bocado genere esa
+                y ligero sazón hogareño que hace que cada bocado genere esa
                 sensación de satisfacción que solo la comida mexicana preparada
                 con tanto cariño puede traer.
               </p>
@@ -467,7 +467,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="col-12 col-sm-6 d-flex justify-content-center video video1 mb-4 ">
+                <div className="col-12 col-sm-6 d-flex justify-content-center video video1 mb-4 position-relative ">
                   <div
                     className={`${sectionStyle.circle} ${
                       theme.color === 'dark'
@@ -475,6 +475,14 @@ export default function Home() {
                         : sectionStyle.shadowLight
                     } aboutChimiquil`}
                   >
+                  {/* <svg className='position-absolute' viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill="#FD7014C4"
+                      d="M29.4,-30.6C42.8,-15.9,61.8,-8,61.1,-0.7C60.4,6.6,40.1,13.2,26.6,27.9C13.2,42.6,6.6,65.4,-6.5,71.8C-19.5,78.3,-39,68.4,-45.2,53.7C-51.4,39,-44.3,19.5,-45,-0.7C-45.7,-20.9,-54.1,-41.7,-47.9,-56.4C-41.7,-71,-20.9,-79.5,-6.4,-73C8,-66.6,15.9,-45.3,29.4,-30.6Z"
+                      transform="translate(100 100)"
+                    />
+                  </svg> */}
+
                     <Image
                       // loader={myLoader}
                       priority
@@ -488,12 +496,13 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="col-12 d-flex flex-column justify-content-center align-items-center">
+                  
                   <p>
                     Uno de nuestros platillos estrella: Delicioso burrito
                     gigante con doble tortilla de harina bañado en salsa casera
-                    y relleno de chilaquiles preparados al mommento, acompañado
+                    y relleno de chilaquiles preparados al momento, acompañado
                     de cebolla, cilantro, rico queso ranchero y crema...
-                    (acompañalo con tu carne preferida)
+                    (acompáñalo con tu carne preferida).
                   </p>
                   <div className="d-flex align-items-center">
                     <span className="text-secondary sauce">
@@ -540,10 +549,10 @@ export default function Home() {
                 </div>
                 <div className="col-12 col-md-6 order-2 order-md-1 d-flex flex-column justify-content-center align-items-center">
                   <p className="text-center text-md-start">
-                    ¿Conoces la clasica torta de chilaquiles? Pues esta delicia
-                    va más allá... te preguntaras, ¿Que la hace tan especial?
+                    ¿Conoces la clásica torta de chilaquiles? Pues esta delicia
+                    va más allá... te preguntarás, ¿Qué la hace tan especial?
                     eso es algo que como buen mexicano no puedes dejar para
-                    después, pidela, no te arrepentiras.
+                    después, pídela, no te arrepentirás.
                   </p>
                   <div className="d-flex align-items-center">
                     <span className="text-secondary sauce1">
@@ -590,10 +599,10 @@ export default function Home() {
                 </div>
                 <div className="col-12 col-md-6 order-2 d-flex flex-column justify-content-center align-items-center">
                   <p className="text-center text-md-start">
-                    ¿Sartenazo? ¿que es eso? ¿me van a pegar si lo pido? El
+                    ¿Sartenazo? ¿qué es eso? ¿me van a pegar si lo pido? El
                     Sartenazo es una creación deliciosa que la familia de
-                    chilaquileon pone a disposión de tu exigente paladar, no te
-                    preocupes, no duele, solo pica. Sarten con orilla de
+                    chilaquileon pone a disposición de tu exigente paladar, no
+                    te preocupes, no duele, solo pica. Sartén con orilla de
                     totopos, lleno de huevo revuelto a la mexicana combinado con
                     frijoles caseros y bañado en salsa, le agregamos queso
                     ranchero, cebolla y cilantro.
@@ -653,7 +662,7 @@ export default function Home() {
               <h3
                 className={`${sectionStyle.titleShadow} display-3 mb-4 encuentranos`}
               >
-                Encuentranos!!
+                Encuéntranos!!
               </h3>
               <video
                 className="mapVideo"

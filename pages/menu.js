@@ -46,10 +46,10 @@ const Menu = () => {
           <h1
             className={`${sectionStyle.satisfy} ${musicStyles.titleShadow} display-5 mb-4`}
           >
-            Haz llegado a la parte más dificil, elegir el platillo
+            Has llegado a la parte más dificil, elegir el platillo
           </h1>
           <p
-            className={`${sectionStyle.menuText} ${sectionStyle.satisfy} fw-bold`}
+            className={`${sectionStyle.menuText} ${musicStyles.titleShadow} ${sectionStyle.satisfy} fw-bold`}
           >
             Nosotros sabemos que es muy complicado elegir un solo platillo, no
             te limites... elige 3
@@ -92,17 +92,17 @@ const Menu = () => {
         </div>
         {/* </div> */}
         <p
-          className={`${sectionStyle.menuText} ${sectionStyle.satisfy} text-center col-12 col-md-11 col-lg-10 mt-5 fw-bold indeciso`}
+          className={`${sectionStyle.menuText} ${musicStyles.titleShadow} ${sectionStyle.satisfy} text-center col-12 col-md-11 col-lg-10 mt-5 fw-bold indeciso`}
         >
           ¿Sigues indeciso?
         </p>
         <p
-          className={`${sectionStyle.menuText} ${sectionStyle.satisfy} text-center col-12 col-md-11 col-lg-10 fw-bold indeciso`}
+          className={`${sectionStyle.menuText} ${musicStyles.titleShadow} ${sectionStyle.satisfy} text-center col-12 col-md-11 col-lg-10 fw-bold indeciso`}
         >
           ¿Todo se te antoja?
         </p>
         <p
-          className={`${sectionStyle.menuText} ${sectionStyle.satisfy} text-center col-12 col-md-11 col-lg-10 mb-5 fw-bold indeciso`}
+          className={`${sectionStyle.menuText} ${musicStyles.titleShadow} ${sectionStyle.satisfy} text-center col-12 col-md-11 col-lg-10 mb-5 fw-bold indeciso`}
         >
           No te preocupes, la respuesta está en tu corazón... (claro, y en
           cuanta hambre tengas ) o pide una recomendación nuestro personal está
